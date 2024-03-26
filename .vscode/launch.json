@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Rust Debug Launch",
+      "program": "${workspaceRoot}/target/debug/${workspaceRootFolderName}",
+      "args": [],
+      "cwd": "${workspaceRoot}/target/debug/",
+      "sourceLanguages": [
+        "rust"
+      ]
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'main'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=org_browser",
+          "--package=org_browser"
+        ],
+        "filter": {
+          "name": "org_browser",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
